@@ -1,20 +1,16 @@
 public class labmda_thread {
     public static void main(String[] args){
-        Runnable r1 = new Runnable() {
-            public void run(){
-                for(int i=0;i<100;i++){
+        Runnable r1 = () -> {
+                for(int i=0;i<10;i++){
                     System.out.println("Hi");
                     try{Thread.sleep(10);}catch(Exception e){}
                 }      
-            }
         };
-        Runnable r2 =new Runnable() {
-            public void run(){
-                for(int i=0;i<100;i++){
+        Runnable r2 = () -> {
+                for(int i=0;i<10;i++){
                     System.out.println("Hello");
                     try{Thread.sleep(10);}catch(Exception e){}
                 }
-            }
         };
         
         Thread t1 = new Thread(r1);
